@@ -24,7 +24,7 @@ export class ArticleDetailComponent {
     submitted = false;
 
     ngOnInit() {
-        this._listeArticles = this._articleService.getArticle();
+        this._listeArticles = this._articleService.getArticles();
         this.setEncours(0);
         /* this._articleService.getArticle()
             .then(article => {
@@ -45,7 +45,7 @@ export class ArticleDetailComponent {
     active = true;
 
     private ajouterArticle() {
-        this.enrArticle = new Article(-1, '', '', 0);
+        this.enrArticle = new Article(-1, 0, '', 0);
         this.active = false;
         setTimeout(() => this.active = true, 0);
         this._indiceEnCours = this._listeArticles.push(this.enrArticle) - 1;
