@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Client }    from './client';
-import { ClientService } from '../service';
+import { ClientService } from './client.service';
 
 @Component({
     selector: 'client-form',
@@ -16,6 +17,7 @@ export class ClientDetailComponent {
 
     constructor(clientService: ClientService) {
         this._clientService = clientService;
+        this._router = router;
     }
 
     @Input() enrClient: Client;
@@ -24,9 +26,8 @@ export class ClientDetailComponent {
     submitted = false;
 
     ngOnInit() {
-        this._listeClients = this._clientService.getClients();
-        this.setEncours(0);
-        /* this._clientService.getClients()
+        //  this._listeClients = this._clientService.getClients();
+        this._clientService.getClients()
             .then(clients => {
                 this._listeClients = clients;
                 this.setEncours(0);
@@ -45,7 +46,7 @@ export class ClientDetailComponent {
     active = true;
 
     private ajouterClient() {
-        this.enrClient = new Client(-1, '', '', 0, 0);
+        this.enrClient = new Client(-1, '', '', 0, 0, 0);
         this.active = false;
         setTimeout(() => this.active = true, 0);
         this._indiceEnCours = this._listeClients.push(this.enrClient) - 1;
