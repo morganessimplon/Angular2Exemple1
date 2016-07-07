@@ -8,7 +8,7 @@ import { ArticleService } from './article/article.service';
 @Component({
     selector: 'my-app',
     template: `<router-outlet></router-outlet>`, 
-    directives: [ROUTER_DIRECTIVES]
+    directives: [ROUTER_DIRECTIVES],
     providers: [ClientService , ArticleService]
 })
 

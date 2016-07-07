@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy } from '@angular/core';
+import { Router } from '@angular/router';
 import { Article }    from './article';
-import { ArticleService } from '../service';
+import { ArticleService } from './article.service';
 
 @Component({
     selector: 'article-form',
@@ -9,13 +10,15 @@ import { ArticleService } from '../service';
 
 })
 
-export class ArticleDetailComponent {
+export class ArticleDetailComponent implements OnInit {
     private _listeArticles: Article[];
     private _articleService: ArticleService;
     private _indiceEnCours: number;
+    private _router: Router;
 
-    constructor(articleService: ArticleService) {
+    constructor(articleService: ArticleService, router: Router) {
         this._articleService = articleService;
+        this._router = router;
     }
 
     @Input() enrArticle: Article;
@@ -24,13 +27,12 @@ export class ArticleDetailComponent {
     submitted = false;
 
     ngOnInit() {
-        this._listeArticles = this._articleService.getArticles();
-        this.setEncours(0);
-        /* this._articleService.getArticle()
-            .then(article => {
-                this._listeArticle = article;
+        // this._listeArticles = this._articleService.getArticles();
+        this._articleService.getArticles()
+            .then(articles => {
+                this._listeArticles = articles;
                 this.setEncours(0);
-                }); */
+                });
     }
 
     onSubmit() {
