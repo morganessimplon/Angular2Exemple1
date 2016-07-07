@@ -27,12 +27,13 @@ export class ArticleDetailComponent implements OnInit {
     submitted = false;
 
     ngOnInit() {
-        // this._listeArticles = this._articleService.getArticles();
-        this._articleService.getArticles()
+        this._listeArticles = this._articleService.getArticles();
+        this.setEncours(0);
+        /* this._articleService.getArticles()
             .then(articles => {
                 this._listeArticles = articles;
                 this.setEncours(0);
-                });
+                }); */
     }
 
     onSubmit() {

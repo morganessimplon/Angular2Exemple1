@@ -1,5 +1,5 @@
 import { provideRouter, RouterConfig }  from '@angular/router';
-
+import { ClientDetailComponent } from './client/client.component';
 import { ArticleDetailComponent } from './article/article.component';
 
 export const routes: RouterConfig = [
@@ -16,6 +16,11 @@ export const routes: RouterConfig = [
   {
     path: 'article',
     component: ArticleDetailComponent
+  },
+
+  {
+      path: 'client',
+      component: ClientDetailComponent
   }
 ];
 
