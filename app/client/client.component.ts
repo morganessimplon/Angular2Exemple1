@@ -77,4 +77,5 @@ export class ClientDetailComponent implements OnInit {
             this.setEncours(--this._indiceEnCours);
     }
 
+
 }

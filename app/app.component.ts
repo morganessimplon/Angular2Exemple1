@@ -7,9 +7,10 @@ import { ArticleService } from './article/article.service';
 
 @Component({
     selector: 'my-app',
-    template: ` <nav>
+    template: `<nav>
     <a [routerLink]="['client']">Clients</a>
     <a [routerLink]="['article']">Articles</a>
+    <a [routerLink]="['liste']">Liste</a>
     </nav>
     <router-outlet></router-outlet>` , 
     directives: [ROUTER_DIRECTIVES],
