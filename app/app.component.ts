@@ -10,7 +10,7 @@ import { ArticleService } from './article/article.service';
     template: `<nav>
     <a [routerLink]="['client']">Clients</a>
     <a [routerLink]="['article']">Articles</a>
-    <a [routerLink]="['liste']">Liste</a>
+    <a [routerLink]="['liste']">Panier</a>
     </nav>
     <router-outlet></router-outlet>` , 
     directives: [ROUTER_DIRECTIVES],
