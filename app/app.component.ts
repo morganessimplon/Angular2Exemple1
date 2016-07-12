@@ -8,9 +8,8 @@ import { ArticleService } from './article/article.service';
 @Component({
     selector: 'my-app',
     template: `<nav>
-    <a [routerLink]="['client']">Clients</a>
-    <a [routerLink]="['article']">Articles</a>
-    <a [routerLink]="['liste']">Panier</a>
+    <a [routerLink]="['client']">Ajouter un Client</a>
+    <a [routerLink]="['article']">Ajouter un Article</a>
     </nav>
     <router-outlet></router-outlet>` , 
     directives: [ROUTER_DIRECTIVES],

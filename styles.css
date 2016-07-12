@@ -17,6 +17,7 @@ h2, h3 {
 }
 
 body {
+  background-color: bisque;
   margin: 2em;
 }
 
@@ -58,7 +59,7 @@ button:disabled {
 /* Navigation link styles */
 
 nav {
-    margin-left: 40%;
+    margin-left: 33%;
 }
 
 nav a {
@@ -174,7 +175,17 @@ nav a.active {
 }
 
 
+/* Tableau */
+
+#tableau, #tableau2 {
+    border: 1px dotted black;
+    margin-top: 30px;
+}
+
+
+
 /* Autre */
 
 #articleGeneral, #clientGeneral {
     margin-left: 35%;
+}
