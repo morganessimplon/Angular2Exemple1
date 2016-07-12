@@ -37,7 +37,7 @@
         <div>
             <button (click)="onSubmit()">Valider</button>
             <button (click)="ajouterClient()" type="button" class="btn btn-default" >Nouveau client</button>
-            <button (click)="supprimerClient()" type="button" class="btn btn-default" >Supprimer</button>
+            <button (click)="supprimerClient()" type="button" class="btn btn-default b" >Supprimer</button>
         </div>
         <div>
             <button (click)="setPrecedent()" type="button" class="btn btn-default" >Prec</button>
@@ -46,11 +46,12 @@
     </div>
 
     <table id="tableau2">
-        <tr *ngFor="let client of _listeClients" class="">
+        <tr #clientEnCours *ngFor="let client of _listeClients" class="">
                 <td>{{client.nom}}</td>
                 <td>{{client.prenom}}</td>
                 <td>{{client.age}} ans</td>
                 <td>{{client.enfant}} enfant(s)</td>
+                <td><button (click)="supprimerClient(clientEnCours)" class="b">Supprimer</button></td>
         </tr>        
     </table>
 

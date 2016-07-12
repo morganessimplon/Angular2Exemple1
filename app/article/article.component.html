@@ -31,8 +31,8 @@
         </div>
         <div>
             <button (click)="onSubmit()">Valider</button>
-            <button (click)="ajouterArticle()" type="button" class="btn btn-default" >Nouveau article</button>
-            <button (click)="supprimerArticle()" type="button" class="btn btn-default" >Supprimer</button>
+            <button (click)="ajouterArticle()" type="button" class="btn btn-default" >Nouvel article</button>
+            <button (click)="supprimerTout" type="button" class="btn btn-default b" >Tout Supprimer</button>
         </div>
         <div>
             <button (click)="setPrecedent()" type="button" class="btn btn-default" >Prec</button>
@@ -41,11 +41,12 @@
     </div>
 
     <table id="tableau">
-        <tr *ngFor="let article of _listeArticles" class="">
+        <tr #articleEnCours *ngFor="let article of _listeArticles" class="">
                 <td>{{article.code}}</td>
                 <td>{{article.description}}</td>
                 <td>{{article.prix}}€</td>
-        </tr>        
+                <td><button (click)="supprimerArticle(articleEnCours)" class="b">Supprimer</button></td>
+        </tr>  
     </table>
 
 </div>
