@@ -178,10 +178,10 @@ nav a.active {
 /* Tableau */
 
 #tableau, #tableau2 {
-    border: 1px dotted black;
+    border: 1px dotted red;
     margin-top: 30px;
+    padding: 30px;
 }
-
 
 
 /* Autre */
